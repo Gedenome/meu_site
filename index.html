@@ -14,6 +14,7 @@
             background: url('https://www.transparenttextures.com/patterns/pw-maze.png'), linear-gradient(to bottom right, #ffb3b3, #ff99cc);
             background-size: cover;
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
 
         .container {
@@ -38,11 +39,12 @@
             width: 100%;
             height: 100%;
             opacity: 0.3;
-            z-index: -1; /* Mantém a imagem no fundo */
+            z-index: -1;
         }
 
         .buttons {
             margin-top: 20px;
+            position: relative;
         }
 
         .btn {
@@ -54,11 +56,14 @@
             border-radius: 5px;
             cursor: pointer;
             transition: 0.3s;
+            position: absolute;
         }
 
         .btn-sim {
             background-color: #4CAF50;
             color: white;
+            left: 50%;
+            transform: translateX(-120%);
         }
 
         .btn-sim:hover {
@@ -68,6 +73,8 @@
         .btn-nao {
             background-color: #ff4d4d;
             color: white;
+            left: 50%;
+            transform: translateX(20%);
         }
 
         .btn-nao:hover {
@@ -81,8 +88,27 @@
         ME DÁ O CU?
         <div class="buttons">
             <button class="btn btn-sim" onclick="alert('Boa escolha! 😏')">Sim</button>
-            <button class="btn btn-nao" onclick="alert('VAI TI FUDE! 😢')">Não</button>
+            <button class="btn btn-nao" id="btn-nao">Não</button>
         </div>
     </div>
+
+    <script>
+        const btnNao = document.getElementById("btn-nao");
+
+        btnNao.addEventListener("mouseenter", function() {
+            const screenWidth = window.innerWidth - btnNao.clientWidth;
+            const screenHeight = window.innerHeight - btnNao.clientHeight;
+
+            let newX = Math.random() * screenWidth;
+            let newY = Math.random() * screenHeight;
+
+            // Garante que o botão não saia completamente da tela
+            newX = Math.max(10, Math.min(newX, screenWidth - 10));
+            newY = Math.max(10, Math.min(newY, screenHeight - 10));
+
+            btnNao.style.left = `${newX}px`;
+            btnNao.style.top = `${newY}px`;
+        });
+    </script>
 </body>
 </html>
