@@ -37,12 +37,49 @@
             height: 100%;
             opacity: 0.3;
         }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-sim {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-sim:hover {
+            background-color: #45a049;
+        }
+
+        .btn-nao {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .btn-nao:hover {
+            background-color: #e60000;
+        }
     </style>
 </head>
 <body>
     <div class="flower-background"></div>
     <div class="container">
-        ME DA O CU?
+        ME DÁ O CU?
+        <div class="buttons">
+            <button class="btn btn-sim" onclick="alert('Boa escolha! 😏')">Sim</button>
+            <button class="btn btn-nao" onclick="alert('VAI TI FUDE! 😢')">Não</button>
+        </div>
     </div>
 </body>
 </html>
