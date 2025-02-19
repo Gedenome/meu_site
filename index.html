@@ -25,17 +25,20 @@
             background-color: rgba(255, 255, 255, 0.7);
             padding: 20px;
             border-radius: 10px;
+            position: relative;
+            z-index: 1;
         }
 
         .flower-background {
             background: url('https://www.w3schools.com/w3images/flowers.jpg') no-repeat center center;
             background-size: cover;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             opacity: 0.3;
+            z-index: -1; /* Mantém a imagem no fundo */
         }
 
         .buttons {
@@ -78,7 +81,7 @@
         ME DÁ O CU?
         <div class="buttons">
             <button class="btn btn-sim" onclick="alert('Boa escolha! 😏')">Sim</button>
-            <button class="btn btn-nao" onclick="alert('VAI TI FUDE! 😢')">Não</button>
+            <button class="btn btn-nao" onclick="alert('Poxa, que pena! 😢')">Não</button>
         </div>
     </div>
 </body>
